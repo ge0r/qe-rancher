@@ -45,7 +45,7 @@ jobs:
           select(.version=="15.3") | .build] | sort | reverse | .[0]'`;
           echo ::set-output name=VALUE::$VALUE;
         id: leap153buildnumber
-     - name: Schedule 15.3 job
+      - name: Schedule 15.3 job
        if: env.STATUS == '0'
        run: >
           openqa-client isos post --apikey ${{ secrets.O3_APIKEY }} --apisecret ${{ secrets.O3_APISECRET }}
